@@ -2,6 +2,8 @@ from nlu_analysers.analyser import Analyser
 
 import subprocess
 import json
+import urllib
+import requests
 
 class DialogflowAnalyser(Analyser):
 	def __init__(self, project_id):
@@ -17,14 +19,21 @@ class DialogflowAnalyser(Analyser):
 		access_token = str(access_token).strip()
 		for s in data["sentences"]:
 			if not s["training"]: #only use test data
-				encoded_text = urllib.quote(s['text'])
+				encoded_text = urllib.parse.quote(s['text'])
 				headers = {'Authorization':'Bearer %s' %  access_token, 'Content-Type': 'application/json'}
 				data = {'queryInput': {'text': {'text': encoded_text, 'languageCode': 'en'}}}
 				r = requests.post(self.url, data=json.dumps(data), headers=headers)
 				annotations['results'].append(r.text)
 		
-		file = open(output, "w")
-		file.write(json.dumps(annotations, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False).encode('utf-8'))
+		file = open(output, "wb")
+		file.write(json.dumps(
+			annotations,
+			sort_keys=False,
+			indent=4,
+			separators=(',', ': '),
+			ensure_ascii=False)
+			.encode('utf-8')
+		)
 		file.close()
   		
 	def analyse_annotations(self, annotations_file, corpus_file, output_file):

@@ -32,7 +32,7 @@ class Analyser(object):
 		my_sort = list(sort_order2)
 		my_sort.extend(sort_order)		
 		
-		return [OrderedDict(sorted(my_dict.iteritems(), key=lambda (k, v): my_sort.index(k)))]
+		return [OrderedDict(sorted(my_dict.iteritems(), key=lambda k, v: my_sort.index(k)))]
 		
 	@staticmethod
 	def calc_pres_rec_f1(dict, tp, fn, fp):

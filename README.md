@@ -1,3 +1,11 @@
+
+## Οδηγίες
+τρέχουμε το test_converter.py και μας παράγει τα αντίστοιχα αρχεία στον φάκελο exports.
+Στον φάκελο json_data φτιάχνουμε το corpus, όταν θέλουμε την ερώτηση να την χρησιμοποιήσουμε
+ για τα training τότε την ορίζουμε ως training:true, αλλιώς false. Τα εξαγόμενα αρχεία για να
+ τα εισάγουμε στα αντίστοιχα nlu εξάγονται στον φάκελο exports που δημιουργείται όταν τρέξουμε
+ το αντίστοιχο script.
+ 
 # NLU-Evaluation-Scripts
 Python scripts for automatically evaluating NLU services (API.ai, IBM Watson Conversation, Microsoft LUIS, RASA) based on the format used by [NLU-Evaluation-Corpora](https://github.com/sebischair/NLU-Evaluation-Corpora).
 

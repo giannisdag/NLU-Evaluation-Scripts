@@ -1,5 +1,7 @@
-import subprocess
 from nlu_analysers.analyser import Analyser
+
+import subprocess
+import json
 
 class DialogflowAnalyser(Analyser):
 	def __init__(self, project_id):
@@ -22,80 +24,79 @@ class DialogflowAnalyser(Analyser):
 				annotations['results'].append(r.text)
 		
 		file = open(output, "w")
-  		file.write(json.dumps(annotations, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False).encode('utf-8'))
-  		file.close()   
+		file.write(json.dumps(annotations, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False).encode('utf-8'))
+		file.close()
   		
-  	def analyse_annotations(self, annotations_file, corpus_file, output_file):
-  		analysis = {"intents":{}, "entities":{}}  		
+	def analyse_annotations(self, annotations_file, corpus_file, output_file):
+		analysis = {"intents":{}, "entities":{}}
   		
-  		corpus = json.load(open(corpus_file))
-  		gold_standard = []
-  		for s in corpus["sentences"]:
+		corpus = json.load(open(corpus_file))
+		gold_standard = []
+		for s in corpus["sentences"]:
 			if not s["training"]: #only use test data
 				gold_standard.append(s)
   		
-  		annotations = json.load(open(annotations_file))
+		annotations = json.load(open(annotations_file))
   		
-  		i = 0
-  		for a in annotations["results"]:
-  			a = json.loads(a)
-  			if not urllib.unquote(a["queryResult"]["queryText"]).decode('utf8') == gold_standard[i]["text"]:
-  				print "WARNING! Texts not equal"
-  			 
-  			#intent  			 			
-  			try:
-  				aIntent = a["queryResult"]["intent"]["displayName"]
-  			except:
-  				aIntent = "None"  				
-  			oIntent = gold_standard[i]["intent"]
-  			
-  			Analyser.check_key(analysis["intents"], aIntent)
-  			Analyser.check_key(analysis["intents"], oIntent)
-  			
-  			if aIntent == oIntent:
-  				#correct
-  				analysis["intents"][aIntent]["truePos"] += 1
-  			else:
-  				#incorrect
-  				analysis["intents"][aIntent]["falsePos"] += 1
-  				analysis["intents"][oIntent]["falseNeg"] += 1
-  				
-  				
-  			#entities
-  			try:
-  				aEntities = a["queryResult"]["parameters"]
-  			except:
-  				aEntities = {}
-  			oEntities = gold_standard[i]["entities"]
-  			  			  			
-  			for x in aEntities.keys():
-  				Analyser.check_key(analysis["entities"], x)
-  				
-  				if len(oEntities) < 1: #false pos
-  					analysis["entities"][x]["falsePos"] += 1
-  				else:
-  					truePos = False
-  					
-  					for y in oEntities:
-  						if len(aEntities[x]) != 0 and aEntities[x][0].lower() == y["text"].lower():
-  							if x == y["entity"]: #truePos
-  								truePos = True
-  								oEntities.remove(y)
-  								break
-  							else:						 #falsePos + falseNeg
-  								analysis["entities"][x]["falsePos"] += 1
-  								analysis["entities"][y["entity"]]["falseNeg"] += 1
-  								oEntities.remove(y)
-  								break
-  					if truePos:
-  						analysis["entities"][x]["truePos"] += 1
-  					else:
-  						analysis["entities"][x]["falsePos"] += 1
+		i = 0
+		for a in annotations["results"]:
+			a = json.loads(a)
+		if not urllib.unquote(a["queryResult"]["queryText"]).decode('utf8') == gold_standard[i]["text"]:
+			print("WARNING! Texts not equal")
+		#intent
+		try:
+			aIntent = a["queryResult"]["intent"]["displayName"]
+		except:
+			aIntent = "None"
+		oIntent = gold_standard[i]["intent"]
 
-  			for y in oEntities:
-  				Analyser.check_key(analysis["entities"], y["entity"])
-  				analysis["entities"][y["entity"]]["falseNeg"] += 1	  					
-  			  			  				
-  			i += 1	
-  		
-  		self.write_json(output_file, json.dumps(analysis, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False).encode('utf-8'))	
+		Analyser.check_key(analysis["intents"], aIntent)
+		Analyser.check_key(analysis["intents"], oIntent)
+
+		if aIntent == oIntent:
+			#correct
+				analysis["intents"][aIntent]["truePos"] += 1
+		else:
+			#incorrect
+			analysis["intents"][aIntent]["falsePos"] += 1
+			analysis["intents"][oIntent]["falseNeg"] += 1
+
+
+		#entities
+		try:
+			aEntities = a["queryResult"]["parameters"]
+		except:
+			aEntities = {}
+		oEntities = gold_standard[i]["entities"]
+
+		for x in aEntities.keys():
+			Analyser.check_key(analysis["entities"], x)
+
+			if len(oEntities) < 1: #false pos
+				analysis["entities"][x]["falsePos"] += 1
+			else:
+				truePos = False
+
+				for y in oEntities:
+					if len(aEntities[x]) != 0 and aEntities[x][0].lower() == y["text"].lower():
+						if x == y["entity"]: #truePos
+							truePos = True
+							oEntities.remove(y)
+							break
+						else:						 #falsePos + falseNeg
+							analysis["entities"][x]["falsePos"] += 1
+							analysis["entities"][y["entity"]]["falseNeg"] += 1
+							oEntities.remove(y)
+							break
+				if truePos:
+					analysis["entities"][x]["truePos"] += 1
+				else:
+					analysis["entities"][x]["falsePos"] += 1
+
+		for y in oEntities:
+			Analyser.check_key(analysis["entities"], y["entity"])
+			analysis["entities"][y["entity"]]["falseNeg"] += 1
+
+		i += 1
+
+		self.write_json(output_file, json.dumps(analysis, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False).encode('utf-8'))

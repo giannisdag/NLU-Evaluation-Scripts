@@ -1,9 +1,12 @@
-from converter import *
+# from converter import *
+from nlu_converters.converter import Converter
+from nlu_converters.annotated_sentence import AnnotatedSentence
 
 import shutil
 import os
 import hashlib
 import zipfile
+import json
 
 class DialogflowConverter(Converter):
 	@staticmethod
@@ -60,7 +63,7 @@ class DialogflowConverter(Converter):
 	
 		try:
 			self.intents[u["intent"]]
-		except KeyError, e:
+		except KeyError as e:
 			self.intents[u["intent"]] = []
 	
 		self.intents[u["intent"]].append(u)
@@ -166,7 +169,7 @@ class DialogflowConverter(Converter):
 			j["data"] = words 
 			j["isTemplate"] = False
 			j["count"] = 0
-			j["id"] = hashlib.md5(str(counter)).hexdigest()
+			j["id"] = hashlib.md5(str(counter).encode('utf-8')).hexdigest()
 			user_says.append(j) 
 
 		my_json["userSays"] = user_says

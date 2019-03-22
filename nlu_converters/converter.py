@@ -1,4 +1,4 @@
-from annotated_sentence import AnnotatedSentence
+# from nlu_converters.annotated_sentence import AnnotatedSentence
 import json
 
 
@@ -14,7 +14,7 @@ class Converter(object):
 	@staticmethod
 	def write_json(file, content):
 		f = open(file, "w")
-		f.write(content)
+		f.write(content.decode('utf-8'))
 		f.close()
 	
 	@staticmethod		

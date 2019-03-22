@@ -1,5 +1,5 @@
 import subprocess
-from analyser import *
+from nlu_analysers.analyser import Analyser
 
 class DialogflowAnalyser(Analyser):
 	def __init__(self, project_id):

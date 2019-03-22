@@ -1,4 +1,8 @@
-from converter import *
+from nlu_converters.converter import Converter
+from nlu_converters.annotated_sentence import AnnotatedSentence
+
+
+import json
 import datetime
 
 class WatsonConverter(Converter):			
@@ -77,4 +81,6 @@ class WatsonConverter(Converter):
 		watson_json["intents"] = self.utterances 
 		watson_json["entities"] = self.entities 
 
-		self.write_json(file, json.dumps(watson_json, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False).encode('utf-8'))
+		self.write_json(file,
+		json.dumps(watson_json, sort_keys=False, indent=4, separators=(',', ': '),
+		ensure_ascii=False).encode('utf-8'))

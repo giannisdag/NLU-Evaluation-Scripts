@@ -22,8 +22,8 @@ class WatsonAnalyser(Analyser):
 				annotations['results'].append(r.text)
 		
 		file = open(output, "w")
-  		file.write(json.dumps(annotations, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False).encode('utf-8'))
-  		file.close()   
+		file.write(json.dumps(annotations, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False).encode('utf-8'))
+		file.close()
   		
   	def analyse_annotations(self, annotations_file, corpus_file, output_file):
   		analysis = {"intents":{}, "entities":{}}  		

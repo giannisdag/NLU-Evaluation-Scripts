@@ -1,0 +1,28 @@
+{
+  "name": "English_teaching",
+  "desc": "test for more information",
+  "lang": "en",
+  "sentences": [
+    {
+      "author": "Giannis Dagkoulis",
+      "text": "teach me",
+      "entities": [],
+      "intent": "direct Translation",
+      "training": true
+    },
+    {
+      "author": "Giannis Dagkoulis",
+      "text": "ask me words",
+      "entities": [],
+      "intent": "direct Translation",
+      "training": true
+    },
+    {
+      "author": "Giannis Dagkoulis",
+      "text": "Go ahead ask me",
+      "entities": [],
+      "intent": "direct Translation",
+      "training": false
+    }
+  ]
+}

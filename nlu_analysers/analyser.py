@@ -1,9 +1,4 @@
-import urllib
 import json
-import requests
-import time
-import sys
-from requests.auth import HTTPBasicAuth
 from collections import OrderedDict
 
 class Analyser(object):			
@@ -24,15 +19,18 @@ class Analyser(object):
 	@staticmethod
 	def sort_dict(my_dict):
 		for key in my_dict:
+            # print(key)
 			if isinstance(my_dict[key], dict):
 				my_dict[key] = Analyser.sort_dict(my_dict[key])
-		
+        # print(my_dict.items())
 		sort_order = ['intents', 'entities', 'truePos', 'falseNeg', 'falsePos', 'precision', 'recall', 'f1']
-		sort_order2 = set(my_dict.keys()) - set(sort_order)		
+        sort_order2 = set(my_dict.keys()) - set(sort_order)
 		my_sort = list(sort_order2)
-		my_sort.extend(sort_order)		
-		
-		return [OrderedDict(sorted(my_dict.iteritems(), key=lambda k, v: my_sort.index(k)))]
+		my_sort.extend(sort_order)
+        # print(my_sort)
+        return [OrderedDict(sorted(my_dict.items(), key=lambda k: my_sort.index(k[0])))]
+
+    # return [OrderedDict(sorted(my_dict.iteritems(), key=lambda k, v: my_sort.index(k)))]
 		
 	@staticmethod
 	def calc_pres_rec_f1(dict, tp, fn, fp):
@@ -76,10 +74,12 @@ class Analyser(object):
 		
 		#sort keys		
 		content = Analyser.sort_dict(content)
-		
-		f = open(file, "w")
-		f.write( json.dumps(content, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False).encode('utf-8'))
+
+        f = open(file, "wb")
+        f.write(
+            json.dumps(content, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False)
+                .encode('utf-8'))
 		f.close()
-         
-	def __init__(self):
+
+    def __init__(self):
 		self.analysis = {}

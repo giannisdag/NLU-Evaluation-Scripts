@@ -6,6 +6,14 @@
  τα εισάγουμε στα αντίστοιχα nlu εξάγονται στον φάκελο exports που δημιουργείται όταν τρέξουμε
  το αντίστοιχο script.
  
+ Για να εκδόσουμε κωδικό πρόσβασης εγκαθιστούμε το gcloud, και στην συνέχεια ακολουθούμε τις οδηγίες παραγωγής credentials σύμφωνα 
+ με τις οδηγίες. https://cloud.google.com/docs/authentication/production
+ 
+ Μετά από το τερματικό μπορούμε να δώσουμε την εντολή 
+ 
+ `gcloud auth application-default print-access-token`
+ 
+ για να πάρουμε το αντίστοιχο token για την συνεδρία μας 
 # NLU-Evaluation-Scripts
 Python scripts for automatically evaluating NLU services (API.ai, IBM Watson Conversation, Microsoft LUIS, RASA) based on the format used by [NLU-Evaluation-Corpora](https://github.com/sebischair/NLU-Evaluation-Corpora).
 

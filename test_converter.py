@@ -1,7 +1,8 @@
 from environs import Env
 from data_presenter import DataPresenter
 from environs import Env
-
+from nlu_analysers.watson_analyser import WatsonAnalyser
+from nlu_analysers.dialogflow_analyser import DialogflowAnalyser
 from data_presenter import DataPresenter
 
 env = Env()
@@ -37,5 +38,5 @@ env.read_env()
 data_presenter = DataPresenter()
 data_presenter.bar_presenter(
     "exports/analysis/english_teaching_Analysis_WatsonEleni.json",
-    "exports/analysis/english_teaching_Analysis_DialogflowEleni.json"
+    "exports/analysis/english_teaching_Analysis_DialogflowEleni.json",
 )

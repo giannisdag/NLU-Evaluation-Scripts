@@ -88,7 +88,7 @@ class WatsonAnalyser(Analyser):
             if (len(a["intents"]) > 0):
                 aIntent = a["intents"][0]["intent"]
             else:
-                aIntent = None
+                aIntent = 'notFound'
             oIntent = gold_standard[i]["intent"].replace(" ", "_")
 
             Analyser.check_key(analysis["intents"], aIntent)

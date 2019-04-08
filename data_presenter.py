@@ -1,57 +1,109 @@
 import json
-
 import matplotlib.pyplot as plt
 import numpy as np
 
 
 class DataPresenter:
-    def prepare_data(self, data, labels):
+    def prepare_data(self, data, labels, conf_matrix_param, label_name):
         tp = []
-        for intent in data[0]['intents']:
+        for intent in data[0][label_name]:
             for label in labels:
-                tp.append(intent[label][0]['truePos'])
+                label_data_name = intent[label][0][conf_matrix_param]
+                if label_data_name == 'null':
+                    label_data_name = 'Null response'
+                tp.append(label_data_name)
         return tp
+
+    def prepare_bars(self, plot, data1, data2, x_label, y_label, title, labels, conf_matrix_param, label_name):
+        n_groups = len(labels)
+        index = np.arange(n_groups)
+        bar_width = 0.35
+        opacity = 0.4
+        bar1 = self.prepare_data(data1, labels, conf_matrix_param, label_name)
+        bar2 = self.prepare_data(data2, labels, conf_matrix_param, label_name)
+
+        error_config = {'ecolor': '0.3'}
+        plot.bar(index, bar1, bar_width,
+                 alpha=opacity, color='b',
+                 error_kw=error_config,
+                 label='Watson')
+
+        plot.bar(index + bar_width, bar2, bar_width,
+                 alpha=opacity, color='r',
+                 error_kw=error_config,
+                 label='Dialog flow')
+        plot.set_xlabel(x_label)
+        plot.set_ylabel(y_label)
+        plot.set_title(title)
+        plot.set_xticks(index + bar_width / 2)
+        plot.set_xticklabels(labels)
+        plot.legend()
+        return plot
+
+    def prepare_figure(self, first_data, second_data, label_name):
+        labels = []
+        keys = list(first_data[0][label_name][0].keys())
+        print(keys)
+        for key in keys[:-3]:
+            labels.append(key)
+
+        print(labels)
+        fig, (ax1, ax2, ax3) = plt.subplots(nrows=3, ncols=1)
+        # fig.subplots_adjust(hspace=0.4, wspace=0.4)
+        self.prepare_bars(ax1, first_data, second_data,
+                          label_name,
+                          'True Positive',
+                          label_name+': Compare true positives',
+                          labels,
+                          'truePos',
+                          label_name)
+        self.prepare_bars(ax2, first_data, second_data,
+                          label_name,
+                          'False Negative',
+                          label_name+': Compare false negatives',
+                          labels,
+                          'falseNeg',
+                          label_name)
+        self.prepare_bars(ax3, first_data, second_data,
+                          label_name,
+                          'False Positive',
+                          label_name+': Compare false Positives',
+                          labels,
+                          'falsePos',
+                          label_name)
+        # self.prepare_bars(ax2, FN1, FN2, 'Intents', 'False Negative', 'Intents: Compare false negatives', labels)
+        fig.tight_layout()
+
+
 
     def bar_presenter(self, first_data_file, second_data_file):
         first_data = json.load(open(first_data_file))
         second_data = json.load(open(second_data_file))
-        labels = []
-        keys = list(first_data[0]['intents'][0].keys())
-        for key in keys[:-4]:
-            labels.append(key)
+        self.prepare_figure(first_data, second_data, 'intents')
+        self.prepare_figure(first_data, second_data, 'entities')
 
-        TP1 = self.prepare_data(first_data, labels)
-        TP2 = self.prepare_data(second_data, labels)
-        n_groups = len(labels)
-
-        fig, ax = plt.subplots()
-
-        index = np.arange(n_groups)
-
-        bar_width = 0.35
-
-        opacity = 0.4
-        error_config = {'ecolor': '0.3'}
-
-        rects1 = ax.bar(index, TP1, bar_width,
-                        alpha=opacity, color='b',
-                        error_kw=error_config,
-                        label='Watson')
-
-        rects2 = ax.bar(index + bar_width, TP2, bar_width,
-                        alpha=opacity, color='r',
-                        error_kw=error_config,
-                        label='Dialog flow')
-
-        ax.set_xlabel('Intents')
-        ax.set_ylabel('True Positive')
-        ax.set_title('Compare true positives')
-        ax.set_xticks(index + bar_width / 2)
-        ax.set_xticklabels(labels)
-        ax.legend()
-
-        fig.tight_layout()
         plt.show()
+
+        # rects1 = ax[0].bar(index, TP1, bar_width,
+        #                    alpha=opacity, color='b',
+        #                    error_kw=error_config,
+        #                    label='Watson')
+        #
+        # rects2 = ax[0].bar(index + bar_width, TP2, bar_width,
+        #                    alpha=opacity, color='r',
+        #                    error_kw=error_config,
+        #                    label='Dialog flow')
+        #
+        # ax[1].bar(index, TP3, bar_width,
+        #           alpha=opacity, color='b',
+        #           error_kw=error_config,
+        #           label='Watson')
+        #
+        # ax[1].bar(index + bar_width, TP4, bar_width,
+        #           alpha=opacity, color='r',
+        #           error_kw=error_config,
+        #           label='Dialog flow')
+
 
 
 '''

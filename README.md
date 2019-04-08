@@ -13,7 +13,11 @@
  
  `gcloud auth application-default print-access-token`
  
- για να πάρουμε το αντίστοιχο token για την συνεδρία μας 
+ για να πάρουμε το αντίστοιχο token για την συνεδρία μας. Επειδή ακόμη δεν έχω καταφέρει να το κάνω να τρέξει αυτόματα, θα πρέπει να πάρουμε το token
+ και να το περάσουμε στην γραμμή 21 στο αρχείο dialogflow_analyzer.py. Προσοχή αυτό το token λήγει κάποια στιγμή.
+ Τέλος για να περαστούν τα αντίστοιχα python πακέτα δίνουμε την εντολή
+ 
+ ` pip install -r requirements.txt` 
 # NLU-Evaluation-Scripts
 Python scripts for automatically evaluating NLU services (API.ai, IBM Watson Conversation, Microsoft LUIS, RASA) based on the format used by [NLU-Evaluation-Corpora](https://github.com/sebischair/NLU-Evaluation-Corpora).
 

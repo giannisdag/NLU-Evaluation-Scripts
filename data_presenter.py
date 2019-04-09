@@ -9,9 +9,13 @@ class DataPresenter:
         tp = []
         for intent in data[0][label_name]:
             for label in labels:
+                # print(type(intent[label][0][conf_matrix_param]))
                 label_data_name = intent[label][0][conf_matrix_param]
+                # print(label_data_name)
                 if label_data_name == 'null':
                     label_data_name = 'Null response'
+                if label_data_name == 'n.a.':
+                    label_data_name = 0
                 tp.append(label_data_name)
         return tp
 
@@ -48,8 +52,9 @@ class DataPresenter:
         for key in keys[:-3]:
             labels.append(key)
 
+        labels =[label for label in labels if label != 'notFound']
         print(labels)
-        fig, (ax1, ax2, ax3) = plt.subplots(nrows=3, ncols=1)
+        fig, (ax1, ax2, ax3, ax4) = plt.subplots(nrows=4, ncols=1)
         # fig.subplots_adjust(hspace=0.4, wspace=0.4)
         self.prepare_bars(ax1, first_data, second_data,
                           label_name,
@@ -71,6 +76,13 @@ class DataPresenter:
                           label_name+': Compare false Positives',
                           labels,
                           'falsePos',
+                          label_name)
+        self.prepare_bars(ax4, first_data, second_data,
+                          label_name,
+                          'F1 score',
+                          label_name+': Compare F1 score',
+                          labels,
+                          'f1',
                           label_name)
         # self.prepare_bars(ax2, FN1, FN2, 'Intents', 'False Negative', 'Intents: Compare false negatives', labels)
         fig.tight_layout()

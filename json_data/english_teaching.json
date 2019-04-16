@@ -84,14 +84,14 @@
     },
     {
       "author": "Giannis Dagkoulis",
-      "text": "test in vocabulary",
+      "text": "vocabulary",
       "entities": [],
       "intent": "directTranslation",
       "training": false
     },
     {
       "author": "Giannis Dagkoulis",
-      "text": "what is the meaning",
+      "text": "meaning",
       "entities": [],
       "intent": "directTranslation",
       "training": false
@@ -168,12 +168,12 @@
     },
     {
       "author": "Eleni Adamopoulou",
-      "text": "I prefer I like English",
+      "text": "I like English",
       "entities": [
         {
           "entity": "book",
-          "start": 2,
-          "stop": 4,
+          "start": 0,
+          "stop": 2,
           "text": "I like English"
         }
       ],
@@ -348,7 +348,7 @@
     },
     {
       "author": "Eleni Adamopoulou",
-      "text": "Name?",
+      "text": "Name",
       "entities": [],
       "intent": "acquaintance",
       "training": true
@@ -439,12 +439,12 @@
     },
     {
       "author": "Eleni Adamopoulou",
-      "text": "I am 12",
+      "text": "12",
       "entities": [
         {
           "entity": "age",
-          "start": 2,
-          "stop": 2,
+          "start": 0,
+          "stop": 0,
           "text": "12"
         }
       ],
@@ -493,7 +493,85 @@
     },
     {
       "author": "Eleni Adamopoulou",
-      "text": "get a break",
+      "text": "tell me some stuff about you?",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "tell me about you",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "say about you",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "what are you",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "tell me about your personality",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "talk some stuff about",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "tell me about yourself",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "I want to know you better",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "I want to know more about you",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "define yourself",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "introduce yourself",
+      "entities": [],
+      "intent": "acquaintanceVT",
+      "training": false
+    },
+   
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "break",
       "entities": [],
       "intent": "break",
       "training": false
@@ -501,7 +579,7 @@
 
     {
       "author": "Eleni Adamopoulou",
-      "text": "out now",
+      "text": "out",
       "entities": [],
       "intent": "break",
       "training": true
@@ -529,7 +607,7 @@
     },
     {
       "author": "Eleni Adamopoulou",
-      "text": "end of session",
+      "text": "end",
       "entities": [],
       "intent": "break",
       "training": false
@@ -547,6 +625,146 @@
       "entities": [],
       "intent": "break",
       "training": false
-    }    
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "What is an apple",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 3,
+          "stop": 3,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": true
+    },  
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "What does apple mean",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 2,
+          "stop": 2,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": true
+    },   
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "What is the meaning of an apple",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 6,
+          "stop": 6,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": true
+    },   
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "What's the meaning of apple",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 4,
+          "stop": 4,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": true
+    }, 
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Meaning of apple",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 2,
+          "stop": 2,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": true
+    }, 
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Please tell me the meaning of apple",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 6,
+          "stop": 6,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": true
+    },  
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Can you tell me what apple mean",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 5,
+          "stop": 5,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": true
+    },    
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Can you tell me what apple mean",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 2,
+          "stop": 2,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": false
+    }, 
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Give me the meaning of apple",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 5,
+          "stop": 5,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": false
+    },    
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Can you tell me what apple mean",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 2,
+          "stop": 2,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": false
+    }
   ]
 }

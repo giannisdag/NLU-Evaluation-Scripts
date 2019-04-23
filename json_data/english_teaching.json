@@ -12,11 +12,89 @@
     },
     {
       "author": "Eleni Adamopoulou",
+      "text": "Good morning, there",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Good morning to you",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Hello, good morning",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Good evening",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Good evening to you",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Hey, good evening",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Hi, good evening",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },    
+    {
+      "author": "Eleni Adamopoulou",
       "text": "Good afternoon",
       "entities": [],
       "intent": "welcome",
       "training": true
     },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Good afternoon there",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Good afternoon to you",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Hey, good afternoon",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Afternoon",
+      "entities": [],
+      "intent": "welcome",
+      "training": true
+    },
+
     {
       "author": "Eleni Adamopoulou",
       "text": "Hi VT",
@@ -36,10 +114,64 @@
       "text": "I am here VT",
       "entities": [],
       "intent": "welcome",
-      "training": true
+      "training": false
     },
-    
-
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "lovely day isn't it",
+      "entities": [],
+      "intent": "welcome",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "long time no see",
+      "entities": [],
+      "intent": "welcome",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "just going to say hi",
+      "entities": [],
+      "intent": "welcome",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "hello again",
+      "entities": [],
+      "intent": "welcome",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "I greet you",
+      "entities": [],
+      "intent": "welcome",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "hey",
+      "entities": [],
+      "intent": "welcome",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "a good day",
+      "entities": [],
+      "intent": "welcome",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "greetings",
+      "entities": [],
+      "intent": "welcome",
+      "training": false
+    },
     {
       "author": "Giannis Dagkoulis",
       "text": "teach me",
@@ -56,7 +188,28 @@
     },
     {
       "author": "Giannis Dagkoulis",
+      "text": "ok, I am awaiting to ask me",
+      "entities": [],
+      "intent": "directTranslation",
+      "training": true
+    },
+    {
+      "author": "Giannis Dagkoulis",
       "text": "Go ahead ask me",
+      "entities": [],
+      "intent": "directTranslation",
+      "training": true
+    },
+    {
+      "author": "Giannis Dagkoulis",
+      "text": "Ask me about vocabulary",
+      "entities": [],
+      "intent": "directTranslation",
+      "training": true
+    },
+    {
+      "author": "Giannis Dagkoulis",
+      "text": "Check me in vocabulary",
       "entities": [],
       "intent": "directTranslation",
       "training": true
@@ -77,10 +230,10 @@
     },
     {
       "author": "Giannis Dagkoulis",
-      "text": "Check me in vocabulary",
+      "text": "Hey, ask me the vocabulary",
       "entities": [],
       "intent": "directTranslation",
-      "training": false
+      "training": true
     },
     {
       "author": "Giannis Dagkoulis",
@@ -92,6 +245,27 @@
     {
       "author": "Giannis Dagkoulis",
       "text": "meaning",
+      "entities": [],
+      "intent": "directTranslation",
+      "training": false
+    },
+    {
+      "author": "Giannis Dagkoulis",
+      "text": "I would like to be checked in vocabulary",
+      "entities": [],
+      "intent": "directTranslation",
+      "training": false
+    },
+    {
+      "author": "Giannis Dagkoulis",
+      "text": "I would like to be checked in vocabulary",
+      "entities": [],
+      "intent": "directTranslation",
+      "training": false
+    },
+    {
+      "author": "Giannis Dagkoulis",
+      "text": "Nice, go ahead and ask me",
       "entities": [],
       "intent": "directTranslation",
       "training": false
@@ -112,6 +286,34 @@
     },
     {
       "author": "Eleni Adamopoulou",
+      "text": "The book I have is I like English",
+      "entities": [
+        {
+          "entity": "book",
+          "start": 5,
+          "stop": 7,
+          "text": "I like English"
+        }
+      ],
+      "intent": "vocabularyBook",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "I like English is my book",
+      "entities": [
+        {
+          "entity": "book",
+          "start":0,
+          "stop": 2,
+          "text": "I like English"
+        }
+      ],
+      "intent": "vocabularyBook",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
       "text": "My book is Our World 2",
       "entities": [
         {
@@ -123,6 +325,20 @@
       ],
       "intent": "vocabularyBook",
       "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Our World 2 is my book",
+      "entities": [
+        {
+          "entity": "book",
+          "start": 0,
+          "stop": 2,
+          "text": "Our World 2"
+        }
+      ],
+      "intent": "vocabularyBook",
+      "training": false
     },
     {
       "author": "Eleni Adamopoulou",
@@ -150,7 +366,7 @@
         }
       ],
       "intent": "vocabularyBook",
-      "training": true
+      "training": false
     },
     {
       "author": "Eleni Adamopoulou",
@@ -165,6 +381,20 @@
       ],
       "intent": "vocabularyBook",
       "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "Gold experience is my book",
+      "entities": [
+        {
+          "entity": "book",
+          "start": 0,
+          "stop": 1,
+          "text": "Gold experience"
+        }
+      ],
+      "intent": "vocabularyBook",
+      "training": false
     },
     {
       "author": "Eleni Adamopoulou",
@@ -272,11 +502,39 @@
           "entity": "page",
           "start": 0,
           "stop": 0,
-          "text": "45"
+          "text": "60"
         }
       ],
       "intent": "vocabularyBook",
       "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "page is 40",
+      "entities": [
+        {
+          "entity": "page",
+          "start": 2,
+          "stop": 2,
+          "text": "40"
+        }
+      ],
+      "intent": "vocabularyBook",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "the page I have my vocabulary is 50",
+      "entities": [
+        {
+          "entity": "page",
+          "start": 7,
+          "stop": 7,
+          "text": "50"
+        }
+      ],
+      "intent": "vocabularyBook",
+      "training": false
     },
     {
       "author": "Eleni Adamopoulou",
@@ -439,7 +697,49 @@
     },
     {
       "author": "Eleni Adamopoulou",
+      "text": "I am 13 years old",
+      "entities": [
+        {
+          "entity": "age",
+          "start": 2,
+          "stop": 2,
+          "text": "13"
+        }
+      ],
+      "intent": "acquaintance",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
       "text": "12",
+      "entities": [
+        {
+          "entity": "age",
+          "start": 0,
+          "stop": 0,
+          "text": "12"
+        }
+      ],
+      "intent": "acquaintance",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "12 years old",
+      "entities": [
+        {
+          "entity": "age",
+          "start": 0,
+          "stop": 0,
+          "text": "12"
+        }
+      ],
+      "intent": "acquaintance",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "12 years",
       "entities": [
         {
           "entity": "age",
@@ -490,6 +790,26 @@
       ],
       "intent": "acquaintance",
       "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "George and I am 10 years old",
+      "entities": [
+        {
+          "entity": "name",
+          "start": 0,
+          "stop": 0,
+          "text": "George"
+        },
+        {
+          "entity": "age",
+          "start": 4,
+          "stop": 4,
+          "text": "10"
+        }
+      ],
+      "intent": "acquaintance",
+      "training": true
     },
     {
       "author": "Eleni Adamopoulou",
@@ -576,6 +896,20 @@
       "intent": "break",
       "training": false
     },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "I am bored",
+      "entities": [],
+      "intent": "break",
+      "training": false
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "bored",
+      "entities": [],
+      "intent": "break",
+      "training": false
+    },
 
     {
       "author": "Eleni Adamopoulou",
@@ -594,6 +928,27 @@
     {
       "author": "Eleni Adamopoulou",
       "text": "I'm leaving",
+      "entities": [],
+      "intent": "break",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "I want to leave",
+      "entities": [],
+      "intent": "break",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "wanna stop now",
+      "entities": [],
+      "intent": "break",
+      "training": true
+    },
+    {
+      "author": "Eleni Adamopoulou",
+      "text": "ok, let's stop fot the time",
       "entities": [],
       "intent": "break",
       "training": true
@@ -712,7 +1067,7 @@
     },  
     {
       "author": "Eleni Adamopoulou",
-      "text": "Can you tell me what apple mean",
+      "text": "Can you tell me what apple means",
       "entities": [
         {
           "entity": "word",
@@ -751,10 +1106,10 @@
       ],
       "intent": "reverseTranlation",
       "training": false
-    },    
+    },
     {
-      "author": "Eleni Adamopoulou",
-      "text": "Can you tell me what apple mean",
+      "author": "Giannis Dagkoulis",
+      "text": "Can you translate apple in Greek?",
       "entities": [
         {
           "entity": "word",
@@ -764,7 +1119,7 @@
         }
       ],
       "intent": "reverseTranlation",
-      "training": false
+      "training": true
     }
   ]
 }

@@ -31,12 +31,12 @@ class DataPresenter:
         plot.bar(index, bar1, bar_width,
                  alpha=opacity, color='b',
                  error_kw=error_config,
-                 label='Watson')
+                 label='Wat')
 
         plot.bar(index + bar_width, bar2, bar_width,
                  alpha=opacity, color='r',
                  error_kw=error_config,
-                 label='Dialog flow')
+                 label='Dial')
         plot.set_xlabel(x_label)
         plot.set_ylabel(y_label)
         plot.set_title(title)

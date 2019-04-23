@@ -1,9 +1,11 @@
 import json
+import subprocess
+import time
 import urllib
 
 import requests
-
 from nlu_analysers.analyser import Analyser
+from environs import Env
 
 
 class DialogflowAnalyser(Analyser):
@@ -12,13 +14,16 @@ class DialogflowAnalyser(Analyser):
         self.url = "https://dialogflow.googleapis.com/v2/projects/" + project_id + "/agent/sessions/1:detectIntent"
 
     def get_annotations(self, corpus, output):
+        env = Env()
+        # Read .env into os.environ
+        env.read_env()
+
         data = json.load(open(corpus))
         annotations = {'results': []}
-
-        # p = subprocess.Popen(['gcloud', 'auth', 'application-default', 'print-access-token'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        # access_token, err = p.communicate()
-        # access_token = str(access_token).strip()
-        access_token = "ya29.c.ElneBkExjwTmBvmAJcsI4FysYdZyjamJ_Q6khFDBNJ2SoH3Wdju8ixk5f-7P0cwGuMLWQAv_F2o9q-p3p-UwYuMdaKQ9WvVjrkX-lHV36TYztv6pkxR_LJBJGw"
+        p = subprocess.Popen(['gcloud', 'auth', 'print-access-token'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        access_token, err = p.communicate()
+        access_token = access_token.decode('ascii').strip()
+        time.sleep(2)
         for s in data["sentences"]:
             if not s["training"]:  # only use test data
                 encoded_text = s['text']  # urllib.parse.quote(s['text'])

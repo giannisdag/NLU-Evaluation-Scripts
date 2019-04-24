@@ -244,7 +244,7 @@
     },
     {
       "author": "Giannis Dagkoulis",
-      "text": "meaning",
+      "text": "Check me in translation",
       "entities": [],
       "intent": "directTranslation",
       "training": false
@@ -469,70 +469,35 @@
     {
       "author": "Eleni Adamopoulou",
       "text": "The vocabulary is in page 15",
-      "entities": [
-        {
-          "entity": "page",
-          "start": 5,
-          "stop": 5,
-          "text": "15"
-        }
-      ],
+      "entities": [],
       "intent": "vocabularyBook",
       "training": true
     },
     {
       "author": "Eleni Adamopoulou",
       "text": "The page of my vocabulary is 45",
-      "entities": [
-        {
-          "entity": "page",
-          "start": 6,
-          "stop": 6,
-          "text": "45"
-        }
-      ],
+      "entities": [],
       "intent": "vocabularyBook",
       "training": true
     },
     {
       "author": "Eleni Adamopoulou",
       "text": "60 is the page",
-      "entities": [
-        {
-          "entity": "page",
-          "start": 0,
-          "stop": 0,
-          "text": "60"
-        }
-      ],
+      "entities": [],
       "intent": "vocabularyBook",
       "training": true
     },
     {
       "author": "Eleni Adamopoulou",
       "text": "page is 40",
-      "entities": [
-        {
-          "entity": "page",
-          "start": 2,
-          "stop": 2,
-          "text": "40"
-        }
-      ],
+      "entities": [],
       "intent": "vocabularyBook",
       "training": false
     },
     {
       "author": "Eleni Adamopoulou",
       "text": "the page I have my vocabulary is 50",
-      "entities": [
-        {
-          "entity": "page",
-          "start": 7,
-          "stop": 7,
-          "text": "50"
-        }
-      ],
+      "entities": [],
       "intent": "vocabularyBook",
       "training": false
     },
@@ -545,12 +510,6 @@
           "start": 3,
           "stop": 5,
           "text": "45"
-        },
-        {
-          "entity": "page",
-          "start": 10,
-          "stop": 10,
-          "text": "20"
         }
       ],
       "intent": "vocabularyBook",
@@ -565,12 +524,6 @@
           "start": 2,
           "stop": 4,
           "text": "I like English"
-        },
-        {
-          "entity": "page",
-          "start": 1,
-          "stop": 1,
-          "text": "30"
         }
       ],
       "intent": "vocabularyBook",
@@ -585,12 +538,6 @@
           "start": 2,
           "stop": 4,
           "text": "Our World 1"
-        },
-        {
-          "entity": "page",
-          "start": 11,
-          "stop": 11,
-          "text": "25"
         }
       ],
       "intent": "vocabularyBook",
@@ -670,84 +617,42 @@
     {
       "author": "Eleni Adamopoulou",
       "text": "My age is 15",
-      "entities": [
-        {
-          "entity": "age",
-          "start": 3,
-          "stop": 3,
-          "text": "15"
-        }
-      ],
+      "entities": [],
       "intent": "acquaintance",
       "training": true
     },
     {
       "author": "Eleni Adamopoulou",
       "text": "I am 13",
-      "entities": [
-        {
-          "entity": "age",
-          "start": 2,
-          "stop": 2,
-          "text": "13"
-        }
-      ],
+      "entities": [],
       "intent": "acquaintance",
       "training": true
     },
     {
       "author": "Eleni Adamopoulou",
       "text": "I am 13 years old",
-      "entities": [
-        {
-          "entity": "age",
-          "start": 2,
-          "stop": 2,
-          "text": "13"
-        }
-      ],
+      "entities": [],
       "intent": "acquaintance",
       "training": true
     },
     {
       "author": "Eleni Adamopoulou",
       "text": "12",
-      "entities": [
-        {
-          "entity": "age",
-          "start": 0,
-          "stop": 0,
-          "text": "12"
-        }
-      ],
+      "entities": [],
       "intent": "acquaintance",
       "training": true
     },
     {
       "author": "Eleni Adamopoulou",
       "text": "12 years old",
-      "entities": [
-        {
-          "entity": "age",
-          "start": 0,
-          "stop": 0,
-          "text": "12"
-        }
-      ],
+      "entities": [],
       "intent": "acquaintance",
       "training": false
     },
     {
       "author": "Eleni Adamopoulou",
       "text": "12 years",
-      "entities": [
-        {
-          "entity": "age",
-          "start": 0,
-          "stop": 0,
-          "text": "12"
-        }
-      ],
+      "entities": [],
       "intent": "acquaintance",
       "training": false
     },
@@ -760,12 +665,6 @@
           "start": 3,
           "stop": 3,
           "text": "Ira"
-        },
-        {
-          "entity": "age",
-          "start": 7,
-          "stop": 7,
-          "text": "10"
         }
       ],
       "intent": "acquaintance",
@@ -780,12 +679,6 @@
           "start": 0,
           "stop": 0,
           "text": "George"
-        },
-        {
-          "entity": "age",
-          "start": 4,
-          "stop": 4,
-          "text": "10"
         }
       ],
       "intent": "acquaintance",
@@ -800,12 +693,6 @@
           "start": 0,
           "stop": 0,
           "text": "George"
-        },
-        {
-          "entity": "age",
-          "start": 4,
-          "stop": 4,
-          "text": "10"
         }
       ],
       "intent": "acquaintance",
@@ -1067,13 +954,13 @@
     },  
     {
       "author": "Eleni Adamopoulou",
-      "text": "Can you tell me what apple means",
+      "text": "Can you tell me what house means",
       "entities": [
         {
           "entity": "word",
           "start": 5,
           "stop": 5,
-          "text": "apple"
+          "text": "house"
         }
       ],
       "intent": "reverseTranlation",
@@ -1085,8 +972,8 @@
       "entities": [
         {
           "entity": "word",
-          "start": 2,
-          "stop": 2,
+          "start": 5,
+          "stop": 5,
           "text": "apple"
         }
       ],
@@ -1109,17 +996,59 @@
     },
     {
       "author": "Giannis Dagkoulis",
-      "text": "Can you translate apple in Greek?",
+      "text": "Can you translate dog in Greek?",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 3,
+          "stop": 3,
+          "text": "dog"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": true
+    },
+    {
+      "author": "Giannis Dagkoulis",
+      "text": "what about translating apple in Greek?",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 3,
+          "stop": 3,
+          "text": "apple"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": false
+    },
+        {
+      "author": "Giannis Dagkoulis",
+      "text": "Thank you, please translate dog in Greek",
+      "entities": [
+        {
+          "entity": "word",
+          "start": 4,
+          "stop": 4,
+          "text": "dog"
+        }
+      ],
+      "intent": "reverseTranlation",
+      "training": false
+    },
+    {
+      "author": "Giannis Dagkoulis",
+      "text": "what is house in greek?",
       "entities": [
         {
           "entity": "word",
           "start": 2,
           "stop": 2,
-          "text": "apple"
+          "text": "house"
         }
       ],
       "intent": "reverseTranlation",
-      "training": true
+      "training": false
     }
   ]
 }

@@ -10,8 +10,9 @@
  με τις οδηγίες. https://cloud.google.com/docs/authentication/production
  
  Μετά από το τερματικό μπορούμε να δώσουμε την εντολή 
+ `gcloud auth activate-service-account --key-file "key-file-name.json"`
  
- `gcloud auth application-default print-access-token`
+ `gcloud auth print-access-token`
  
  για να πάρουμε το αντίστοιχο token για την συνεδρία μας. Επειδή ακόμη δεν έχω καταφέρει να το κάνω να τρέξει αυτόματα, θα πρέπει να πάρουμε το token
  και να το περάσουμε στην γραμμή 21 στο αρχείο dialogflow_analyzer.py. Προσοχή αυτό το token λήγει κάποια στιγμή.

@@ -1,25 +1,25 @@
 import json
 
 
-def implicit():
-    from google.cloud import storage
-
-    # If you don't specify credentials when constructing the client, the
-    # client library will look for credentials in the environment.
-    # storage_client = storage.Client()
-    storage_client = storage.Client.from_service_account_json(
-        'keys/testenglishteacher-4ab6c044ae12.json')
-    project_id = 'testenglishteacher'
-    url = "https://dialogflow.googleapis.com/v2/projects/" + project_id + "/agent/sessions/1:detectIntent"
-    encoded_text = 'patates'
-    data = {'queryInput': {'text': {'text': encoded_text, 'languageCode': 'en'}}}
-    res = storage_client._http.post(url=url, data=data)
-    print(res.content)
-    # Make an authenticated API request
-    print(storage_client.get_service_account_email('testenglishteacher'))
-    print(storage_client.project)
-    buckets = list(storage_client.list_buckets())
-    print(buckets)
+# def implicit():
+#     from google.cloud import storage
+#
+#     # If you don't specify credentials when constructing the client, the
+#     # client library will look for credentials in the environment.
+#     # storage_client = storage.Client()
+#     storage_client = storage.Client.from_service_account_json(
+#         'keys/testenglishteacher-4ab6c044ae12.json')
+#     project_id = 'testenglishteacher'
+#     url = "https://dialogflow.googleapis.com/v2/projects/" + project_id + "/agent/sessions/1:detectIntent"
+#     encoded_text = 'patates'
+#     data = {'queryInput': {'text': {'text': encoded_text, 'languageCode': 'en'}}}
+#     res = storage_client._http.post(url=url, data=data)
+#     print(res.content)
+#     # Make an authenticated API request
+#     print(storage_client.get_service_account_email('testenglishteacher'))
+#     print(storage_client.project)
+#     buckets = list(storage_client.list_buckets())
+#     print(buckets)
 
 
 def json_data_counter(file):
